@@ -232,3 +232,26 @@ body {
     background-color: var(--primary-fire);
     color: white;
 }
+/* Force hide loading screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-dark);
+    display: none !important; /* Force hide immediately */
+    z-index: 9999;
+}
+
+/* Ensure main content is visible */
+.main-content {
+    display: block !important;
+    position: relative;
+    z-index: 1;
+}
+
+.main-content.active {
+    display: block !important;
+    animation: fadeIn 1s ease-in-out;
+}

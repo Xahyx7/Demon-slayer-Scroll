@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon Slayer Encyclopedia - Ultimate Guide</title>
+    <meta name="description" content="The most comprehensive Demon Slayer (Kimetsu no Yaiba) encyclopedia featuring all characters, breathing techniques, and interactive content.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/intro.css">
+    <link rel="stylesheet" href="assets/css/characters.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Intro Sequence -->
+    <div class="intro-container" id="introContainer">
+        <!-- Hinokami Kagura Scene -->
+        <div class="hinokami-scene" id="hinokamiiScene">
+            <div class="flame-effect"></div>
+            <div class="tanjiro-silhouette"></div>
+            <div class="sword-glow"></div>
+        </div>
+
+        <!-- Logo Container -->
+        <div class="logo-container" id="logoContainer">
+            <div class="demon-slayer-logo">DEMON SLAYER</div>
+            <div class="subtitle-logo">鬼滅の刃</div>
+        </div>
+
+        <!-- Character Montage -->
+        <div class="character-montage" id="characterMontage">
+            <div class="character-silhouette hashira-1"></div>
+            <div class="character-silhouette hashira-2"></div>
+            <div class="character-silhouette hashira-3"></div>
+            <div class="character-silhouette hashira-4"></div>
+            <div class="character-silhouette main-1"></div>
+            <div class="character-silhouette main-2"></div>
+        </div>
+    </div>
+
+    <!-- Main Website Content -->
+    <div class="main-content" id="mainContent">
+        <div class="breathing-background"></div>
+        
+        <header class="header">
+            <h1 class="main-title demon-slayer-font">DEMON SLAYER ENCYCLOPEDIA</h1>
+            <p class="subtitle">The Ultimate Guide to the World of Kimetsu no Yaiba</p>
+            <div class="header-decoration">⚔️ 鬼滅の刃 ⚔️</div>
+        </header>
+
+        <section class="character-gallery">
+            <h2 class="gallery-title demon-slayer-font">CHARACTER DATABASE</h2>
+            
+            <div class="character-grid">
+                <!-- Tanjiro Kamado -->
+                <div class="character-card fire-breathing" data-character="tanjiro" onclick="selectCharacter('tanjiro')">
+                    <div class="character-image tanjiro-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Tanjiro Kamado</h3>
+                    <p class="character-title">Main Protagonist</p>
+                    <span class="breathing-style">Sun Breathing / Water Breathing</span>
+                    <div class="fire-particles">
+                        <div class="particle" style="left: 20%; animation-delay: 0s;"></div>
+                        <div class="particle" style="left: 80%; animation-delay: 1s;"></div>
+                        <div class="particle" style="left: 50%; animation-delay: 2s;"></div>
+                    </div>
+                </div>
+
+                <!-- Nezuko Kamado -->
+                <div class="character-card fire-breathing" data-character="nezuko" onclick="selectCharacter('nezuko')">
+                    <div class="character-image nezuko-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Nezuko Kamado</h3>
+                    <p class="character-title">Demon Sister</p>
+                    <span class="breathing-style">Blood Demon Art</span>
+                </div>
+
+                <!-- Zenitsu Agatsuma -->
+                <div class="character-card thunder-breathing" data-character="zenitsu" onclick="selectCharacter('zenitsu')">
+                    <div class="character-image zenitsu-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Zenitsu Agatsuma</h3>
+                    <p class="character-title">Thunder Breathing User</p>
+                    <span class="breathing-style">Thunder Breathing</span>
+                </div>
+
+                <!-- Inosuke Hashibira -->
+                <div class="character-card wind-breathing" data-character="inosuke" onclick="selectCharacter('inosuke')">
+                    <div class="character-image inosuke-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Inosuke Hashibira</h3>
+                    <p class="character-title">Beast Breathing User</p>
+                    <span class="breathing-style">Beast Breathing</span>
+                </div>
+
+                <!-- Giyu Tomioka -->
+                <div class="character-card water-breathing" data-character="giyu" onclick="selectCharacter('giyu')">
+                    <div class="character-image giyu-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Giyu Tomioka</h3>
+                    <p class="character-title">Water Hashira</p>
+                    <span class="breathing-style">Water Breathing</span>
+                </div>
+
+                <!-- Shinobu Kocho -->
+                <div class="character-card insect-breathing" data-character="shinobu" onclick="selectCharacter('shinobu')">
+                    <div class="character-image shinobu-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Shinobu Kocho</h3>
+                    <p class="character-title">Insect Hashira</p>
+                    <span class="breathing-style">Insect Breathing</span>
+                </div>
+
+                <!-- Kyojuro Rengoku -->
+                <div class="character-card fire-breathing" data-character="rengoku" onclick="selectCharacter('rengoku')">
+                    <div class="character-image rengoku-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Kyojuro Rengoku</h3>
+                    <p class="character-title">Flame Hashira</p>
+                    <span class="breathing-style">Flame Breathing</span>
+                </div>
+
+                <!-- Tengen Uzui -->
+                <div class="character-card thunder-breathing" data-character="tengen" onclick="selectCharacter('tengen')">
+                    <div class="character-image tengen-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Tengen Uzui</h3>
+                    <p class="character-title">Sound Hashira</p>
+                    <span class="breathing-style">Sound Breathing</span>
+                </div>
+
+                <!-- Muzan Kibutsuji -->
+                <div class="character-card demon-card" data-character="muzan" onclick="selectCharacter('muzan')">
+                    <div class="character-image muzan-bg"></div>
+                    <h3 class="character-name demon-slayer-font">Muzan Kibutsuji</h3>
+                    <p class="character-title">Demon King</p>
+                    <span class="breathing-style demon-style">Blood Demon Art</span>
+                </div>
+            </div>
+
+            <!-- Character Information Panel -->
+            <div class="character-info" id="characterInfo">
+                <div class="info-section">
+                    <h3 class="info-title">Background</h3>
+                    <p id="characterBackground">Click on a character to see detailed information...</p>
+                </div>
+                
+                <div class="info-section">
+                    <h3 class="info-title">Breathing Techniques</h3>
+                    <ul class="technique-list" id="techniqueList">
+                        <li>Select a character to view their techniques</li>
+                    </ul>
+                </div>
+                
+                <div class="info-section">
+                    <h3 class="info-title">Key Battles</h3>
+                    <p id="keyBattles">Character battle history will appear here...</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/characters.js"></script>
+    <script src="assets/js/breathing-effects.js"></script>
+    <script src="assets/js/intro.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

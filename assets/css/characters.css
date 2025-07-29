@@ -1,0 +1,310 @@
+/* Character Grid */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Character Cards */
+.character-card {
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.character-card:hover::before {
+    opacity: 1;
+}
+
+/* Breathing Style Specific Cards */
+.character-card.fire-breathing {
+    border-color: var(--primary-fire);
+    box-shadow: 0 5px 20px rgba(255,69,0,0.3);
+}
+
+.character-card.fire-breathing:hover {
+    border-color: var(--primary-fire);
+    box-shadow: 0 15px 40px rgba(255,69,0,0.5);
+}
+
+.character-card.water-breathing {
+    border-color: var(--primary-water);
+    box-shadow: 0 5px 20px rgba(0,191,255,0.3);
+}
+
+.character-card.water-breathing:hover {
+    border-color: var(--primary-water);
+    box-shadow: 0 15px 40px rgba(0,191,255,0.5);
+}
+
+.character-card.thunder-breathing {
+    border-color: var(--primary-thunder);
+    box-shadow: 0 5px 20px rgba(255,215,0,0.3);
+}
+
+.character-card.thunder-breathing:hover {
+    border-color: var(--primary-thunder);
+    box-shadow: 0 15px 40px rgba(255,215,0,0.5);
+}
+
+.character-card.wind-breathing {
+    border-color: var(--primary-wind);
+    box-shadow: 0 5px 20px rgba(50,205,50,0.3);
+}
+
+.character-card.wind-breathing:hover {
+    border-color: var(--primary-wind);
+    box-shadow: 0 15px 40px rgba(50,205,50,0.5);
+}
+
+.character-card.insect-breathing {
+    border-color: var(--primary-insect);
+    box-shadow: 0 5px 20px rgba(147,112,219,0.3);
+}
+
+.character-card.insect-breathing:hover {
+    border-color: var(--primary-insect);
+    box-shadow: 0 15px 40px rgba(147,112,219,0.5);
+}
+
+.character-card.demon-card {
+    border-color: var(--demon-red);
+    box-shadow: 0 5px 20px rgba(139,0,0,0.3);
+    background: rgba(139,0,0,0.1);
+}
+
+.character-card.demon-card:hover {
+    border-color: var(--demon-red);
+    box-shadow: 0 15px 40px rgba(139,0,0,0.5);
+}
+
+/* Character Images */
+.character-image {
+    width: 200px;
+    height: 250px;
+    margin: 0 auto 1rem;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover .character-image {
+    transform: scale(1.05);
+}
+
+/* Character Image Backgrounds */
+.tanjiro-bg {
+    background: linear-gradient(135deg, var(--primary-fire) 0%, #ff6600 100%);
+}
+
+.nezuko-bg {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+}
+
+.zenitsu-bg {
+    background: linear-gradient(135deg, var(--primary-thunder) 0%, #ffff00 100%);
+}
+
+.inosuke-bg {
+    background: linear-gradient(135deg, var(--primary-wind) 0%, #228b22 100%);
+}
+
+.giyu-bg {
+    background: linear-gradient(135deg, var(--primary-water) 0%, #1e90ff 100%);
+}
+
+.shinobu-bg {
+    background: linear-gradient(135deg, var(--primary-insect) 0%, #8a2be2 100%);
+}
+
+.rengoku-bg {
+    background: linear-gradient(135deg, var(--primary-fire) 0%, #dc143c 100%);
+}
+
+.tengen-bg {
+    background: linear-gradient(135deg, #ff6347 0%, var(--primary-thunder) 100%);
+}
+
+.muzan-bg {
+    background: linear-gradient(135deg, var(--demon-red) 0%, #000 100%);
+}
+
+/* Character Names and Titles */
+.character-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.character-title {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+/* Breathing Styles */
+.breathing-style {
+    background: rgba(255,69,0,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+    color: var(--primary-fire);
+    border: 1px solid var(--primary-fire);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.demon-style {
+    background: rgba(139,0,0,0.2);
+    color: var(--demon-red);
+    border-color: var(--demon-red);
+}
+
+/* Character Information Panel */
+.character-info {
+    display: none;
+    margin-top: 3rem;
+    text-align: left;
+    background: rgba(0,0,0,0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--primary-fire);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.character-info.active {
+    display: block;
+}
+
+.info-section {
+    margin-bottom: 2rem;
+}
+
+.info-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: var(--primary-fire);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--primary-fire);
+    padding-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255,69,0,0.3);
+}
+
+.technique-list {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.technique-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    padding: 0.5rem;
+    background: rgba(255,69,0,0.05);
+    border-radius: 5px;
+    border-left: 3px solid var(--primary-fire);
+    transition: all 0.3s ease;
+}
+
+.technique-list li:hover {
+    background: rgba(255,69,0,0.1);
+    transform: translateX(5px);
+}
+
+.technique-list li:before {
+    content: "⚔️ ";
+    margin-right: 0.5rem;
+}
+
+/* Particle Effects */
+.fire-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary-fire);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 3s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+    0% { 
+        opacity: 0; 
+        transform: translateY(100%) scale(0); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: translateY(-50%) scale(1); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateY(-100%) scale(0); 
+    }
+}
+
+/* Character Card Active State */
+.character-card.active {
+    transform: translateY(-10px) scale(1.02);
+    border-width: 3px;
+    box-shadow: 0 20px 50px rgba(255,69,0,0.6);
+}
+
+.character-card.active .character-image {
+    transform: scale(1.1);
+}

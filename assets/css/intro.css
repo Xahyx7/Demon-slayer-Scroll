@@ -1,0 +1,224 @@
+/* Intro Sequence Styles */
+.intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hinokami-scene {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle, var(--primary-fire) 0%, var(--demon-red) 50%, #000 100%);
+}
+
+.tanjiro-silhouette {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 400px;
+    background: #000;
+    clip-path: polygon(45% 0%, 55% 0%, 60% 15%, 65% 25%, 70% 35%, 75% 50%, 80% 65%, 75% 80%, 60% 90%, 40% 90%, 25% 80%, 20% 65%, 25% 50%, 30% 35%, 35% 25%, 40% 15%);
+    animation: tanjiroStrike 3s ease-in-out;
+    z-index: 2;
+}
+
+.flame-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse, rgba(255,69,0,0.8) 0%, rgba(255,140,0,0.6) 30%, rgba(255,69,0,0.3) 60%, transparent 100%);
+    animation: flameAnimation 3s ease-in-out infinite;
+}
+
+.sword-glow {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, #fff 0%, var(--gold-accent) 50%, #fff 100%);
+    transform: rotate(-45deg);
+    box-shadow: 0 0 20px var(--gold-accent);
+    animation: swordSlash 3s ease-in-out;
+    z-index: 3;
+}
+
+@keyframes tanjiroStrike {
+    0% { 
+        transform: translate(-50%, -50%) rotate(0deg) scale(1); 
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translate(-50%, -50%) rotate(-15deg) scale(1.1); 
+        opacity: 1;
+    }
+    100% { 
+        transform: translate(-50%, -50%) rotate(0deg) scale(1); 
+        opacity: 0.8;
+    }
+}
+
+@keyframes flameAnimation {
+    0%, 100% { 
+        opacity: 0.8; 
+        transform: scale(1) rotate(0deg); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.2) rotate(5deg); 
+    }
+}
+
+@keyframes swordSlash {
+    0% { 
+        opacity: 0; 
+        transform: rotate(-45deg) translateX(-100px); 
+    }
+    30% { 
+        opacity: 1; 
+        transform: rotate(-45deg) translateX(0); 
+    }
+    70% { 
+        opacity: 1; 
+        transform: rotate(-45deg) translateX(50px); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: rotate(-45deg) translateX(100px); 
+    }
+}
+
+/* Logo Container */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: logoFadeIn 2s ease-in-out 3.5s forwards;
+    text-align: center;
+}
+
+.demon-slayer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-fire);
+    text-shadow: 0 0 20px var(--primary-fire), 0 0 40px #ff6600;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.subtitle-logo {
+    font-size: 2rem;
+    color: var(--gold-accent);
+    text-shadow: 0 0 15px var(--gold-accent);
+    font-weight: 300;
+}
+
+@keyframes logoFadeIn {
+    0% { 
+        opacity: 0; 
+        transform: translate(-50%, -50%) scale(0.5); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1.1); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1); 
+    }
+}
+
+/* Character Montage */
+.character-montage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: montageFadeIn 3s ease-in-out 6s forwards;
+}
+
+.character-silhouette {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    background: linear-gradient(135deg, #000 0%, #333 100%);
+    transition: all 0.5s ease;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,69,0,0.3);
+}
+
+.hashira-1 { 
+    top: 20%; 
+    left: 10%; 
+    clip-path: polygon(40% 0%, 60% 0%, 70% 30%, 65% 60%, 50% 100%, 35% 60%, 30% 30%);
+    animation: silhouetteFloat 4s ease-in-out infinite;
+}
+
+.hashira-2 { 
+    top: 15%; 
+    left: 25%; 
+    clip-path: polygon(45% 0%, 55% 0%, 65% 25%, 60% 55%, 50% 90%, 40% 55%, 35% 25%);
+    animation: silhouetteFloat 4s ease-in-out infinite 0.5s;
+}
+
+.hashira-3 { 
+    top: 25%; 
+    right: 25%; 
+    clip-path: polygon(42% 0%, 58% 0%, 68% 28%, 62% 58%, 48% 95%, 38% 58%, 32% 28%);
+    animation: silhouetteFloat 4s ease-in-out infinite 1s;
+}
+
+.hashira-4 { 
+    top: 20%; 
+    right: 10%; 
+    clip-path: polygon(44% 0%, 56% 0%, 66% 26%, 61% 56%, 49% 92%, 39% 56%, 34% 26%);
+    animation: silhouetteFloat 4s ease-in-out infinite 1.5s;
+}
+
+.main-1 {
+    bottom: 20%;
+    left: 20%;
+    clip-path: polygon(48% 0%, 52% 0%, 58% 20%, 55% 50%, 50% 85%, 45% 50%, 42% 20%);
+    animation: silhouetteFloat 4s ease-in-out infinite 2s;
+}
+
+.main-2 {
+    bottom: 25%;
+    right: 20%;
+    clip-path: polygon(46% 0%, 54% 0%, 60% 22%, 57% 52%, 50% 88%, 43% 52%, 40% 22%);
+    animation: silhouetteFloat 4s ease-in-out infinite 2.5s;
+}
+
+@keyframes montageFadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes silhouetteFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Intro Transition Effects */
+.intro-exit {
+    animation: introExit 1s ease-in-out forwards;
+}
+
+@keyframes introExit {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.9); }
+}

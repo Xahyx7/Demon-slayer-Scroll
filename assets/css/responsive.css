@@ -1,0 +1,308 @@
+/* Mobile Responsive Styles */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .character-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .character-gallery {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-title {
+        font-size: 2rem;
+    }
+    
+    .character-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .character-image {
+        width: 180px;
+        height: 220px;
+    }
+    
+    .character-info {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .info-title {
+        font-size: 1.2rem;
+    }
+    
+    /* Intro Adjustments */
+    .demon-slayer-logo {
+        font-size: 3rem;
+    }
+    
+    .subtitle-logo {
+        font-size: 1.5rem;
+    }
+    
+    .tanjiro-silhouette {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .sword-glow {
+        width: 150px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .header {
+        padding: 1.5rem 0;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .header-decoration {
+        font-size: 1.2rem;
+    }
+    
+    .character-gallery {
+        padding: 2rem 1rem;
+    }
+    
+    .gallery-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .character-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    
+    .character-card {
+        padding: 1.2rem;
+    }
+    
+    .character-image {
+        width: 150px;
+        height: 200px;
+    }
+    
+    .character-name {
+        font-size: 1.3rem;
+    }
+    
+    .character-title {
+        font-size: 0.9rem;
+    }
+    
+    .breathing-style {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .character-info {
+        padding: 1.2rem;
+        margin-top: 1.5rem;
+    }
+    
+    .info-title {
+        font-size: 1.1rem;
+    }
+    
+    .technique-list li {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+    
+    /* Intro Mobile Adjustments */
+    .demon-slayer-logo {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .subtitle-logo {
+        font-size: 1.2rem;
+    }
+    
+    .tanjiro-silhouette {
+        width: 200px;
+        height: 300px;
+    }
+    
+    .sword-glow {
+        width: 120px;
+        height: 3px;
+    }
+    
+    .character-silhouette {
+        width: 100px;
+        height: 140px;
+    }
+    
+    /* Touch Optimizations */
+    .character-card {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .character-card:active {
+        transform: translateY(-5px) scale(0.98);
+    }
+    
+    /* Mobile Navigation */
+    .mobile-nav {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--primary-fire);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(255,69,0,0.3);
+        z-index: 1000;
+    }
+}
+
+/* Very Small Screens */
+@media (max-width: 320px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-title {
+        font-size: 1.5rem;
+    }
+    
+    .character-card {
+        padding: 1rem;
+    }
+    
+    .character-image {
+        width: 130px;
+        height: 180px;
+    }
+    
+    .character-name {
+        font-size: 1.2rem;
+    }
+    
+    .demon-slayer-logo {
+        font-size: 2rem;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .intro-container {
+        height: 100vh;
+    }
+    
+    .tanjiro-silhouette {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .demon-slayer-logo {
+        font-size: 2.5rem;
+    }
+    
+    .character-silhouette {
+        width: 80px;
+        height: 120px;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .character-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .intro-container,
+    .breathing-background,
+    .fire-particles {
+        display: none !important;
+    }
+    
+    .main-content {
+        display: block !important;
+    }
+    
+    .character-card {
+        break-inside: avoid;
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .breathing-background {
+        animation: none;
+    }
+    
+    .particle {
+        animation: none;
+        opacity: 0;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .character-card {
+        border-width: 3px;
+        background: #000;
+        color: #fff;
+    }
+    
+    .breathing-style {
+        background: #fff;
+        color: #000;
+        border-color: #fff;
+    }
+}
+
+/* Focus Styles for Keyboard Navigation */
+.character-card:focus {
+    outline: 3px solid var(--primary-fire);
+    outline-offset: 2px;
+}
+
+.character-card:focus-visible {
+    outline: 3px solid var(--primary-fire);
+    outline-offset: 2px;
+}
